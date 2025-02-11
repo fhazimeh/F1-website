@@ -1,0 +1,630 @@
+body {
+    text-align: center;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+    word-spacing: 1.2px;
+    color: black;
+}
+
+.menu{
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    padding:10px;
+    font-size:17px;
+    display:flex;
+    flex-direction:row;
+    background-color:red;
+    justify-content:flex-start;
+    align-items: center;
+    top: 0; left: 0; right: 0;
+}
+.menu a{
+    margin:0 40px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    
+}
+
+.menu a::after{
+    content: "";
+    position: absolute;
+    bottom: 0; left: 50%;
+    width: 0;
+    height: 1px;
+    background-color:white;
+    transition: width 0.25s, left 0.25s;
+    transform: translateX(-50%);
+}
+
+.menu a:hover::after{
+    width: 80%;
+    left: 50%;
+}
+
+
+.menu a.active::after {
+    width: 80%; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.f1logo{
+    width: 90px;
+}
+
+
+#carouselExampleSlidesOnly{
+    margin-bottom:150px;
+}
+
+.carousel-inner {
+    top: 55px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-inner.loaded {
+    opacity: 1;
+}
+
+.carousel-item {
+    position: relative;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    height: 670px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    
+}
+
+@keyframes slideUp{
+    from{transform: translateY(30%)}
+}
+
+.news-item {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    font-size: 30px;
+    animation-name: slideUp;
+    animation-duration:1.5s;
+}
+
+.news-title {
+    width: 100%;
+    max-width: 900px;
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+
+.news-text {
+    margin-top:40px;
+    width: 100%;
+    max-width: 550px;
+    font-weight: 400;
+}
+
+
+.carousel-controls {
+    position: relative; 
+    bottom: 60px; 
+    display: flex;
+    z-index: 5; 
+}
+
+.upcoming-events{
+    text-align: center;
+}
+
+.title{
+    font-size: 60px;
+    letter-spacing: 2px;
+    color: black;
+    display: inline-block; 
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 80%; 
+    height: 3px;
+    background-color: black; 
+    margin: 5px auto 0; 
+}
+
+.container{
+    align-items:center;
+    width: 100%;
+    height: 350px;
+    display:flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.event{
+    position: relative;
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    border: 3px solid black;
+    transition: all ease-in-out 0.5s;
+}
+
+.event img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.event:hover{
+    width: 500px;
+    height:320px;
+}
+
+.event:hover img{
+    opacity: 0.4;
+}
+
+.event:hover .text{
+    opacity: 1;
+}
+
+.text{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
+    font-size: 16px;
+    width: 100%;
+    opacity: 0;
+    transition: ease-in 0.5s;
+    color: black;
+    font-weight: bold;
+}
+
+.calendar{
+    margin-top: 70px;
+    text-align: center;
+}
+
+.calendar table, .teams-standings table, .drivers-standings table {
+    font-size: 22px;
+    width: 85%;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.calendar table {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.calendar table tr, .teams-standings table tr, .drivers-standings table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.442);
+}
+.calendar table tr:last-of-type, .teams-standings table tr:last-of-type, .drivers-standings table tr:last-of-type{
+    border-bottom: 1px solid black;
+}
+
+.calendar table tr:nth-child(1), .teams-standings table tr:nth-child(1), .drivers-standings table tr:nth-child(1){
+    border-bottom: 1px solid black;
+}
+
+table td, table th{
+    padding: 10px;
+    border-style: none;
+    
+}
+.flag-icon{
+    width: 15px;
+    height: 15px;
+}
+
+.calendar table td:nth-child(1), .teams-standings table td:nth-child(1), .drivers-standings table td:nth-child(1) {
+    color: red;
+    font-weight: bold;
+}
+
+.calendar table td:nth-child(3), .teams-standings table td:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag-icon {
+    margin-right: 5px;
+}
+
+.guide {
+    text-align: center;
+    margin: 70px;
+}
+
+.guide .title {
+    margin-bottom: 40px;
+}
+
+.teams-standings{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.standings-header {
+    position: relative;
+}
+
+#yearsList {
+    position: absolute;
+    top: 45%;
+    right: 7.5%;
+    border-radius: 5px;
+    width: 100px;
+    padding: 10px;
+    font-size: 19px;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;  
+}
+
+#yearsList1 {
+    position: absolute;
+    top: 45%;
+    right: 7.5%;
+    border-radius: 5px;
+    width: 100px;
+    padding: 10px;
+    font-size: 19px;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+#teams-standings-2023, #teams-standings-2022, #teams-standings-2021, #teams-standings-2020 {
+    display: none;
+}
+
+#drivers-standings-2023, #drivers-standings-2022, #drivers-standings-2021, #drivers-standings-2020 {
+    display: none;
+}
+
+.teams-standings table, .drivers-standings table {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    color: black;
+}
+
+.teams-standings table td:nth-child(4), .drivers-standings table td:nth-child(5) {
+    font-weight: bold;
+}
+
+.team-logo img {
+    width: 30px; 
+    height: 30px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.horizontal-logo img{
+    width: 50px;
+    max-width: 40px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.drivers-standings{
+    text-align: center;
+}
+
+.team-div {
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    width: 50%;
+    height: 70vh;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-div:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.horizontal-flex {
+    display: flex;
+    gap: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+    justify-content: space-between;
+}
+
+.teams-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.car-image-container {
+    height: 130px;
+    width: 95%;
+    position: absolute;
+    bottom: 10px;
+    left: 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.car-image {
+    width: 100%;
+}
+
+.team-name{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top:0; left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    font-size: 50px;
+    color: #333;
+}
+
+.team-name img{
+    width: 60px;
+    padding-left: 10px;
+}
+.driverpic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 130px;
+    text-align: center;
+}
+
+.driverpic figcaption {
+    font-size: 16px;
+    margin-top: 5px;
+    line-height: 1;
+    width: 110%;
+    text-align: center;
+
+}
+
+.lastname {
+    font-weight: bold;
+}
+
+.driverpic img {
+    height: 110px;
+    width: 110px;
+    object-fit: cover;
+    border-radius: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.drivers-title {
+    margin-left: 15px;
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.drivers-section {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    left: 35px;
+}
+
+.drivers-container {
+    display: flex;
+    gap: 8px;
+}
+
+.team-info {
+    width: 50%;
+    height: 215px;
+    position: absolute;
+    right: 2%;
+    top: 115px; 
+}
+
+.team-info li:nth-child(odd) {
+    background-color: #f5f5f5;
+    padding: 5px;
+}
+
+.team-info li {
+    color: black;
+    font-size: 18px;
+    list-style-type: none;
+}
+
+.drivers-page {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.drivers-row {
+    width: 95%;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.driver {
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    width: 300px;
+    height: 350px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+    will-change: transform;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.driver-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.driver-front, .driver-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.driver-front{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-radius: 10px;
+}
+
+.driver-back {
+    color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.427);
+}
+
+.driver-back ul{
+    list-style-type: none;
+    font-size: 20px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.driver-back li {
+    padding: 8px 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.driver-back li:last-child {
+    border-bottom: none; 
+}
+
+
+.driver:hover{
+    transform: rotateY(180deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.driver-top{
+    margin-left: 0;
+    margin-top: 5px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.driver-name {
+    margin-left: 1px;
+    padding-left: 8px;
+    border-left: 4px solid;
+    height: auto;
+    width: 100%;
+    font-size: 30px;
+    color: black;
+    text-align:left;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.driver-name-long {
+        margin-left: 1px;
+        padding-left: 8px;
+        border-left: 4px solid;
+        height: 45px;
+        width: 130%;
+        font-size: 28px;
+        color: black;
+        text-align:left;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+.driver-number {
+    text-shadow:2px 2px 4px rgba(100, 100, 100, 0.5), -2px -2px 4px rgba(150, 150, 150, 0.3);
+    text-align: center;
+    height: auto;
+    width: 25%;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 40px;
+}
+
+.driver-profile {
+    margin-left: 5px;
+    width: 90%;
+    height: 65%;
+}
+
+.driver-profile img{
+    width: 100%;
+    max-width: 225px;
+    border-radius: 8px;
+}
+
+
+.driver-team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align:center;
+    margin-right: 30px;
+    width: 90%;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.driver-team img {
+    width: 40px;
+}
